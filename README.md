@@ -1,3 +1,25 @@
+# MPD OLED Spectrum Display for Raspberry Pi
+
+## Fork to disable spectrum display and enlarge media info text
+
+I forked this due to the fact that when I used spectrum display, cava cause my audio to be
+downsampled or upsampled based on the quality of the first song that played when cava
+started up. I cannot sacrifice audio quality for visual fun. I don't really need to see
+the spectrum on m oled, but would like to see the artist and song title in larger font.
+This fork accomplishes that. 
+
+I simply modified a few lines of code. All questions on regular operation should be
+addressed in the original repo.
+
+Both artist and song title will scroll if needed (i.e. too long).
+
+![OLED with mpd_oled](mpd_oled_mod.jpg)
+
+...Original README continues below...
+
+
+
+
 # Moode, Volumio, RuneAudio and MPD OLED Spectrum Display for Raspberry Pi
 
 **Please note that mpd_oled is no longer being developed. Check for**

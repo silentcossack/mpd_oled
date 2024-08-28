@@ -453,28 +453,28 @@ void draw_spect_display(ArduiPi_OLED &display, const display_info &disp_info)
 {
   const int H = 8; // character height
   const int W = 6; // character width
-  draw_spectrum(display, 0, 0, SPECT_WIDTH, 32, disp_info.spect);
+  //draw_spectrum(display, 0, 0, SPECT_WIDTH, 32, disp_info.spect);
   draw_connection(display, 128 - 2 * W, 0, disp_info.conn);
   draw_triangle_slider(display, 128 - 5 * W, 1, 11, 6,
                        disp_info.status.get_volume());
   if (disp_info.status.get_kbitrate() > 0)
     draw_text(display, 128 - 10 * W, 0, 4, disp_info.status.get_kbitrate_str());
 
-  int clock_offset = (disp_info.clock_format < 2) ? 0 : -2;
-  draw_time(display, 128 - 10 * W + clock_offset, 2 * H, 2,
-            disp_info.clock_format);
+  //int clock_offset = (disp_info.clock_format < 2) ? 0 : -2;
+  //draw_time(display, 128 - 10 * W + clock_offset, 2 * H, 2,
+  //          disp_info.clock_format);
 
   vector<double> scroll_origin(disp_info.scroll.begin() + 2,
                                disp_info.scroll.begin() + 4);
-  draw_text_scroll(display, 0, 4 * H + 4, 20, disp_info.status.get_origin(),
+  draw_text_scroll(display, 0, 1 * H + 5, 10, disp_info.status.get_origin(),
                    scroll_origin, disp_info.text_change.secs());
 
   vector<double> scroll_title(disp_info.scroll.begin(),
                               disp_info.scroll.begin() + 2);
-  draw_text_scroll(display, 0, 6 * H, 20, disp_info.status.get_title(),
+  draw_text_scroll(display, 0, 5 * H - 1, 10, disp_info.status.get_title(),
                    scroll_title, disp_info.text_change.secs());
 
-  draw_solid_slider(display, 0, 7 * H + 6, 128, 2,
+  draw_solid_slider(display, 0, 7 * H + 4, 128, 6,
                     100 * disp_info.status.get_progress());
 }
 
